@@ -21,7 +21,6 @@ def health():
 ######################################################################
 # GET INDEX
 ######################################################################
-
 @app.route("/")
 
 def index():
@@ -95,7 +94,6 @@ def get_accounts(account_id):
 ######################################################################
 # UPDATE AN EXISTING ACCOUNT
 ######################################################################
-
 @app.route("/accounts/<int:account_id>", methods=["PUT"])
 def update_accounts(account_id):
     """
@@ -109,7 +107,6 @@ def update_accounts(account_id):
     account.deserialize(request.get_json())
     account.update()
     return account.serialize(), status.HTTP_200_OK
-
 ######################################################################
 # DELETE AN ACCOUNT
 ######################################################################
