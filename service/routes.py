@@ -10,7 +10,6 @@ from service.common import status  # HTTP Status Codes
 from . import app  # Import Flask application
 
 # Two blank lines here
-
 ############################################################
 # Health Endpoint
 ############################################################
@@ -19,7 +18,6 @@ from . import app  # Import Flask application
 def health():
     """Health Status"""
     return jsonify(dict(status="OK")), status.HTTP_200_OK
-
 ######################################################################
 # GET INDEX
 ######################################################################
@@ -29,6 +27,7 @@ def health():
 def index():
     """Root URL response"""
     return (
+        
         jsonify(
             name="Account REST API Service",
             version="1.0",
@@ -57,6 +56,7 @@ def create_accounts():
     # location_url = url_for("get_accounts", account_id=account.id, _external=True)
     location_url = "/"  # Remove once get_accounts has been implemented
     return make_response(
+        
         jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
     )
 
