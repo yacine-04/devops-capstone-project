@@ -14,7 +14,6 @@ from . import app  # Import Flask application
 ############################################################
 # Health Endpoint
 ############################################################
-
 @app.route("/health")
 
 def health():
