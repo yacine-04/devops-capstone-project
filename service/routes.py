@@ -19,7 +19,9 @@ from . import app  # Import Flask application
 
 
 def health():
+
     """Health Status"""
+    
     return jsonify(dict(status="OK")), status.HTTP_200_OK
 ######################################################################
 # GET INDEX
