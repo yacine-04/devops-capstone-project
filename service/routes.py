@@ -9,29 +9,25 @@ from service.models import Account
 from service.common import status  # HTTP Status Codes
 from . import app  # Import Flask application
 
-
-
 # Two blank lines here
-
-
+>>>>> main
 ############################################################
 # Health Endpoint
 ############################################################
-
 @app.route("/health")
-def health():
-    """Health
-     Status"""
-    return jsonify(dict(status="OK")), status.HTTP_200_OK
 
+def health():
+    """Health Status"""
+    return jsonify(dict(status="OK")), status.HTTP_200_OK
 ######################################################################
 # GET INDEX
 ######################################################################
-
 @app.route("/")
+
 def index():
     """Root URL response"""
     return (
+        
         jsonify(
             name="Account REST API Service",
             version="1.0",
@@ -60,6 +56,7 @@ def create_accounts():
     # location_url = url_for("get_accounts", account_id=account.id, _external=True)
     location_url = "/"  # Remove once get_accounts has been implemented
     return make_response(
+        
         jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
     )
 
@@ -98,7 +95,6 @@ def get_accounts(account_id):
 ######################################################################
 # UPDATE AN EXISTING ACCOUNT
 ######################################################################
-
 @app.route("/accounts/<int:account_id>", methods=["PUT"])
 def update_accounts(account_id):
     """
@@ -112,7 +108,6 @@ def update_accounts(account_id):
     account.deserialize(request.get_json())
     account.update()
     return account.serialize(), status.HTTP_200_OK
-
 ######################################################################
 # DELETE AN ACCOUNT
 ######################################################################
