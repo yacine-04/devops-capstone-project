@@ -10,7 +10,6 @@ from service.common import status  # HTTP Status Codes
 from . import app  # Import Flask application
 
 # Two blank lines here
->>>>> main
 ############################################################
 # Health Endpoint
 ############################################################
@@ -35,7 +34,6 @@ def index():
         ),
         status.HTTP_200_OK,
     )
-
 ######################################################################
 # CREATE A NEW ACCOUNT
 ######################################################################
