@@ -16,8 +16,6 @@ from . import app  # Import Flask application
 
 
 @app.route("/health")
-
-
 def health():
 
     """Health Status"""
