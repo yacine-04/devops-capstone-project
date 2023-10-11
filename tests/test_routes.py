@@ -29,7 +29,7 @@ class TestAccountService(TestCase):
 
 
 @classmethod
-def setUpClass(cls):
+  def setUpClass(cls):
 """Run once before all tests"""
 app.config["TESTING"] = True
 app.config["DEBUG"] = False
@@ -39,7 +39,7 @@ init_db(app)
 talisman.force_https = False
 
 @classmethod
-def tearDownClass(cls):
+  def tearDownClass(cls):
 """Runs once before test suite"""
 
 def setUp(self):
